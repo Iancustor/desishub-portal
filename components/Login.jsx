@@ -3,8 +3,8 @@ import React from "react";
 
 function Login() {
   return (
-    <div className=" flex items-center justify-center py-16 px-5">
-      <div className=" w-full max-w-3xl p-4 bg-center bg-cover bg-no-repeat bg-[url('https://res.cloudinary.com/dp0tf8poo/image/upload/v1709625547/formbg_iotuyg.jpg')] bg-blend-multiply border  rounded-lg shadow sm:p-6 md:p-8 bg-gray-800 dark:bg-gray-500 border-gray-700">
+    <div className=" flex items-center justify-center py-6 px-5">
+      <div className=" w-full max-w-3xl p-4 bg-center bg-cover bg-no-repeat bg-[url('https://res.cloudinary.com/dp0tf8poo/image/upload/v1709625547/formbg_iotuyg.jpg')] bg-blend-multiply border  rounded-lg shadow sm:p-6 md:p-8 bg-stone-800  dark:bg-stone-700 border-stone-800 ">
         <form className="space-y-6" action="#">
           <h5 className="text-xl font-medium  text-white"> Log In</h5>
           <div className="mb-6">
@@ -17,7 +17,7 @@ function Login() {
             <input
               type="email"
               id="email"
-              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-purple-500 focus:border-purple-500 block w-full p-2.5 dark:bg-stone-950 dark:border-stone-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-purple-500 dark:focus:border-purple-500"
+              className="bg-dark:border-stone-600 border border-stone-800 text-stone-950 text-sm rounded-lg focus:ring-[#C225B4] focus:border-[#C225B4] block w-full p-2.5 dark:bg-stone-950 dark:border-stone-600 dark:placeholder-white dark:text-white dark:focus:ring-[#C225B4] dark:focus:border-[#C225B4]"
               placeholder="john.doe@company.com"
               required
             />
@@ -34,19 +34,19 @@ function Login() {
               name="password"
               id="password"
               placeholder="••••••••"
-              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-purple-500 focus:border-purple-500 block w-full p-2.5 dark:bg-stone-950 dark:border-stone-900 dark:placeholder-gray-400 dark:text-white"
+              className="bg-stone-100 border border-stone-800 text-stone-950 text-sm rounded-lg focus:ring-[#C225B4] focus:border-[#C225B4] block w-full p-2.5 dark:bg-stone-950 dark:border-stone-900 dark:placeholder-stone-950 dark:text-white"
             />
           </div>
           <button
             type="submit"
-            className="w-full text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:outline-none focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-800"
+            className="w-full text-white bg-[#C225B4] hover:bg-[#C225B4] focus:ring-4 focus:outline-none focus:ring-[#C225B4] font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-[#C225B4] dark:hover:bg-[#C225B4] dark:focus:ring-[#C225B4]"
           >
             Login to your Account
           </button>
 
-          <div className="text-sm font-medium text-gray-100">
+          <div className="text-sm font-medium text-white">
             Not registered?{" "}
-            <Link href="/signup" className=" hover:underline text-purple-500">
+            <Link href="/signup" className=" hover:underline text-[#C225B4]">
               Create account
             </Link>
           </div>
