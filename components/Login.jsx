@@ -60,7 +60,6 @@ function Login() {
             >
               Your password
             </label>
-<<<<<<< HEAD
             <div className="relative flex items-center  justify-center">
               <input
                 {...register("password", {
@@ -90,15 +89,6 @@ function Login() {
                 Password must not exceed 12 characters
               </span>
             )}
-=======
-            <input
-              type="password"
-              name="password"
-              id="password"
-              placeholder="••••••••"
-              className="bg-stone-100 border border-stone-800 text-stone-950 text-sm rounded-lg focus:ring-[#C225B4] focus:border-[#C225B4] block w-full p-2.5 dark:bg-stone-950 dark:border-stone-900 dark:placeholder-stone-50 dark:text-white"
-            />
->>>>>>> 055a0b13abb2c588f14d2ac46ffca129951dd86f
           </div>
 
           <button

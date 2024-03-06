@@ -20,13 +20,8 @@ function Register() {
 
     reset();
   }
-<<<<<<< HEAD
   const [reviewPassword, setReviewPassword] = useState(false);
   const [confirmPassword, setConfirmPassword] = useState(false);
-=======
-  const [reviewPassword, setReviewPassword] = useState(true);
-  const [ConfirmPassword, setConfirmPassword] = useState(true);
->>>>>>> 055a0b13abb2c588f14d2ac46ffca129951dd86f
 
   return (
     <div className=" flex items-center justify-center py-6 px-5">
