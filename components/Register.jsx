@@ -20,11 +20,16 @@ function Register() {
 
     reset();
   }
+<<<<<<< HEAD
   const [reviewPassword, setReviewPassword] = useState(false);
   const [confirmPassword, setConfirmPassword] = useState(false);
+=======
+  const [reviewPassword, setReviewPassword] = useState(true);
+  const [ConfirmPassword, setConfirmPassword] = useState(true);
+>>>>>>> 055a0b13abb2c588f14d2ac46ffca129951dd86f
 
   return (
-    <div className="flex items-center justify-center py-6 px-8">
+    <div className=" flex items-center justify-center py-6 px-5">
       <form
         onClick={handleSubmit(handleForm)}
         className="w-full max-w-3xl p-4 bg-center bg-cover bg-no-repeat bg-[url('https://res.cloudinary.com/dp0tf8poo/image/upload/v1709625547/formbg_iotuyg.jpg')] bg-blend-multiply border  rounded-lg shadow sm:p-6 md:p-8 bg-stone-800  dark:bg-stone-700 border-stone-800 "

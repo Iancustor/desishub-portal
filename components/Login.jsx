@@ -23,7 +23,7 @@ function Login() {
     reset();
   }
   return (
-    <div className=" flex items-center justify-center py-6 px-5">
+    <div className=" flex items-center justify-center py-16 px-5">
       <div className=" w-full max-w-3xl p-4 bg-center bg-cover bg-no-repeat bg-[url('https://res.cloudinary.com/dp0tf8poo/image/upload/v1709625547/formbg_iotuyg.jpg')] bg-blend-multiply border  rounded-lg shadow sm:p-6 md:p-8 bg-stone-800  dark:bg-stone-700 border-stone-800 ">
         <form
           onSubmit={handleSubmit(onSubmit)}
@@ -43,7 +43,7 @@ function Login() {
               aria-invalid={errors.mail ? "true" : "false"}
               type="email"
               id="email"
-              className="bg-dark:border-stone-600 border border-stone-800 text-stone-950 text-sm rounded-lg focus:ring-[#C225B4] focus:border-[#C225B4] block w-full p-2.5 dark:bg-stone-950 dark:border-stone-600 dark:placeholder-white dark:text-white dark:focus:ring-[#C225B4] dark:focus:border-[#C225B4]"
+              className="bg-dark:border-stone-600 border border-stone-800 text-stone-50 placeholder-stone-50 dark:text-stone-50 text-sm rounded-lg focus:ring-[#C225B4] focus:border-[#C225B4] block w-full p-2.5 dark:bg-stone-950 dark:border-stone-600 dark:placeholder-white  dark:focus:ring-[#C225B4] dark:focus:border-[#C225B4]"
               placeholder="john.doe@company.com"
             />
 
@@ -60,6 +60,7 @@ function Login() {
             >
               Your password
             </label>
+<<<<<<< HEAD
             <div className="relative flex items-center  justify-center">
               <input
                 {...register("password", {
@@ -89,6 +90,15 @@ function Login() {
                 Password must not exceed 12 characters
               </span>
             )}
+=======
+            <input
+              type="password"
+              name="password"
+              id="password"
+              placeholder="••••••••"
+              className="bg-stone-100 border border-stone-800 text-stone-950 text-sm rounded-lg focus:ring-[#C225B4] focus:border-[#C225B4] block w-full p-2.5 dark:bg-stone-950 dark:border-stone-900 dark:placeholder-stone-50 dark:text-white"
+            />
+>>>>>>> 055a0b13abb2c588f14d2ac46ffca129951dd86f
           </div>
 
           <button
