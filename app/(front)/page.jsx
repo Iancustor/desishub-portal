@@ -6,8 +6,8 @@ import React from "react";
 function page() {
   return (
     <div>
-      {/* <Login /> */}
-      <Onboard />
+      <Login />
+      {/* <Onboard /> */}
     </div>
   );
 }

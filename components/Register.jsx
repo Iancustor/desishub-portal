@@ -1,5 +1,5 @@
 "use client";
-import { useRouter } from "next/router";
+
 import { Eye, EyeOff } from "lucide-react";
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
@@ -13,13 +13,15 @@ function Register() {
     reset,
     formState: { errors },
   } = useForm();
+
+  const password = watch("password");
   function handleForm(data) {
     // console.log(data);
-    router.push("/onboard");
+
     reset();
   }
   const [reviewPassword, setReviewPassword] = useState(false);
-  const [ConfirmPassword, setConfirmPassword] = useState(false);
+  const [confirmPassword, setConfirmPassword] = useState(false);
 
   return (
     <div className="flex items-center justify-center py-6 px-8">
@@ -37,12 +39,20 @@ function Register() {
               First name
             </label>
             <input
-              {...register("firstName")}
+              {...register("firstName", {
+                required: true,
+                maxLength: 12,
+              })}
               type="text"
               id="first_name"
               className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-[#C225B4] focus:border-[#C225B4] block w-full p-2.5 dark:bg-stone-950 dark:border-stone-900 dark:placeholder-gray-400 dark:text-white dark:focus:ring-[#C225B4] dark:focus:border-[#C225B4]"
               placeholder="John"
             />
+            {errors.name && errors.name.type === "maxLength" && (
+              <span className="text-red-600 text-xs">
+                Name must not exceed 12 characters
+              </span>
+            )}
           </div>
           <div>
             <label
@@ -52,13 +62,20 @@ function Register() {
               Last name
             </label>
             <input
-              {...register("lastName")}
+              {...register("lastName", {
+                required: true,
+                maxLength: 12,
+              })}
               type="text"
               id="last_name"
               className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-[#C225B4] focus:border-[#C225B4] block w-full p-2.5 dark:bg-stone-950 dark:border-stone-900 dark:placeholder-gray-400 dark:text-white dark:focus:ring-[#C225B4] dark:focus:border-[#C225B4]"
               placeholder="Doe"
-              required
             />
+            {errors.name && errors.name.type === "maxLength" && (
+              <span className="text-red-600 text-xs">
+                Name must not exceed 12 characters
+              </span>
+            )}
           </div>
         </div>
         <div className="mb-6">
@@ -69,13 +86,18 @@ function Register() {
             Email address
           </label>
           <input
-            {...register("email")}
+            {...register("mail", { required: "Email Address is required" })}
+            aria-invalid={errors.mail ? "true" : "false"}
             type="email"
             id="email"
             className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-[#C225B4] focus:border-[#C225B4] block w-full p-2.5 dark:bg-stone-950 dark:border-stone-900 dark:placeholder-gray-400 dark:text-white dark:focus:ring-[#C225B4] dark:focus:border-[#C225B4]"
             placeholder="john.doe@company.com"
-            required
           />
+          {errors.mail && (
+            <p className="text-red-700" role="alert">
+              {errors.mail.message}
+            </p>
+          )}
         </div>
         <div className="mb-6">
           <label
@@ -84,44 +106,54 @@ function Register() {
           >
             Password
           </label>
-          <div className="relative flex items-center  justify-center">
+          <div className="relative flex items-center justify-center">
             <input
-              {...register("password")}
-              type={reviewPassword ? "password" : "text"}
+              {...register("password", { required: true })}
+              type={reviewPassword ? "text" : "password"}
               id="password"
-              className=" bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-[#C225B4] focus:border-[#C225B4] block w-full p-2.5 dark:bg-stone-950 dark:border-stone-900 dark:placeholder-gray-400 dark:text-white dark:focus:ring-[#C225B4] dark:focus:border-[#C225B4]"
+              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-[#C225B4] focus:border-[#C225B4] block w-full p-2.5 dark:bg-stone-950 dark:border-stone-900 dark:placeholder-gray-400 dark:text-white dark:focus:ring-[#C225B4] dark:focus:border-[#C225B4]"
               placeholder="•••••••••"
-              required
             />
             <button
-              className="absolute dark:text-white  right-0 px-4"
+              className="absolute dark:text-white right-0 px-4"
               onClick={() => setReviewPassword(!reviewPassword)}
             >
               {reviewPassword ? <EyeOff /> : <Eye />}
             </button>
+            {errors.password && (
+              <span className="text-red-700">Password is required</span>
+            )}
           </div>
         </div>
         <div className="mb-6">
           <label
-            htmlFor="confirm_password"
+            htmlFor="confirmPassword"
             className="block mb-2 text-sm font-medium text-white"
           >
             Confirm password
           </label>
-          <div className="relative flex items-center  justify-center">
+          <div className="relative flex items-center justify-center">
             <input
-              {...register("comfirmPassword")}
-              type={ConfirmPassword ? "password" : "text"}
-              id="confirm_password"
+              {...register("confirmPassword", {
+                required: true,
+                validate: (value) =>
+                  value === password || "The passwords do not match", // Compare with password value
+              })}
+              type={confirmPassword ? "text" : "password"}
+              id="confirmPassword"
               className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-[#C225B4] focus:border-[#C225B4] block w-full p-2.5 dark:bg-stone-950 dark:border-stone-900 dark:placeholder-gray-400 dark:text-white dark:focus:ring-[#C225B4] dark:focus:border-[#C225B4]"
               placeholder="•••••••••"
-              required
             />
+            {errors.confirmPassword && (
+              <span className="text-red-700">
+                {errors.confirmPassword.message}
+              </span>
+            )}
             <button
-              className="absolute dark:text-white  right-0 px-4"
-              onClick={() => setConfirmPassword(!ConfirmPassword)}
+              className="absolute dark:text-white right-0 px-4"
+              onClick={() => setConfirmPassword(!confirmPassword)}
             >
-              {ConfirmPassword ? <EyeOff /> : <Eye />}
+              {confirmPassword ? <EyeOff /> : <Eye />}
             </button>
           </div>
         </div>
