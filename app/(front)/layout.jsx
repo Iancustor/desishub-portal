@@ -1,4 +1,4 @@
-import Active from "@/components/Active";
+import Active from "@/components/Front/Active";
 import Image from "next/image";
 
 export default function Layout({ children }) {
