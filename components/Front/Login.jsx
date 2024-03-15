@@ -26,7 +26,7 @@ function Login() {
   }
   return (
     <div className=" flex items-center justify-center py-16 px-5">
-      <div className=" w-full max-w-3xl p-4 bg-center bg-cover bg-no-repeat bg-[url('https://res.cloudinary.com/dp0tf8poo/image/upload/v1709625547/formbg_iotuyg.jpg')] bg-blend-multiply border  rounded-lg shadow sm:p-6 md:p-8 bg-stone-800  dark:bg-stone-700 border-stone-800 ">
+      <div className=" w-full max-w-3xl p-4 bg-center bg-cover bg-no-repeat bg-[url('https://res.cloudinary.com/dp0tf8poo/image/upload/v1709625547/formbg_iotuyg.jpg')] bg-blend-multiply border  rounded-lg shadow sm:p-6 md:p-8 bg-indigo-800  dark:bg-indigo-500 border-stone-800 ">
         <div className="flex flex-col relative ">
           <form
             onSubmit={handleSubmit(onSubmit)}
@@ -46,7 +46,7 @@ function Login() {
                 aria-invalid={errors.mail ? "true" : "false"}
                 type="email"
                 id="email"
-                className="bg-dark:border-stone-600 border border-stone-800 text-stone-950 placeholder-stone-600 dark:text-stone-50 text-sm rounded-lg focus:ring-[#C225B4] focus:border-[#C225B4] block w-full p-2.5 dark:bg-stone-950 dark:border-stone-600 dark:placeholder-stone-400  dark:focus:ring-[#C225B4] dark:focus:border-[#C225B4]"
+                className="bg-dark:border-stone-600  border border-stone-800 text-stone-950 placeholder-stone-600 dark:text-stone-50 text-sm rounded-lg focus:ring-green-400 focus:border-green-400 block w-full p-2.5 dark:bg-stone-950 dark:border-stone-600 dark:placeholder-stone-400  dark:focus:ring-green-400 dark:focus:border-green-400"
                 placeholder="john.doe@company.com"
               />
 
@@ -73,9 +73,14 @@ function Login() {
                   type={showPassword ? "text" : "password"}
                   id="password"
                   placeholder="••••••••"
-                  className="border-stone-800 text-stone-950 placeholder-stone-600 dark:text-stone-50 text-sm rounded-lg focus:ring-[#C225B4] focus:border-[#C225B4] block w-full p-2.5 dark:bg-stone-950 dark:border-stone-600 dark:placeholder-stone-400  dark:focus:ring-[#C225B4] dark:focus:border-[#C225B4]"
+                  className="border-stone-800 text-stone-950 placeholder-stone-600 dark:text-stone-50 text-sm rounded-lg focus:ring-green-400 focus:border-green-400 block w-full p-2.5 dark:bg-stone-950 dark:border-stone-600 dark:placeholder-stone-400  dark:focus:ring-green-400 dark:focus:border-green-400"
                 />
               </div>
+              {errors.password && (
+                <span className="text-red-600 text-xs mt-2">
+                  Password is Required{" "}
+                </span>
+              )}
               {errors.password && errors.password.type === "minLength" && (
                 <span className="text-red-600 text-xs mt-2">
                   Password must be 6 and above{" "}
@@ -89,14 +94,17 @@ function Login() {
             </div>
             <button
               type="submit"
-              className="w-full text-white bg-[#C225B4] hover:bg-[#C225B4] focus:ring-4 focus:outline-none focus:ring-[#C225B4] font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-[#C225B4] dark:hover:bg-[#C225B4] dark:focus:ring-[#C225B4]"
+              className="w-full text-white bg-green-400 hover:bg-green-400 focus:ring-4 focus:outline-none focus:ring-green-400 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-green-400 dark:hover:bg-green-400 dark:focus:ring-green-400"
             >
               Login to your Account
             </button>
 
             <div className="text-sm font-medium text-white">
               Not registered?{" "}
-              <Link href="/signup" className=" hover:underline text-[#C225B4]">
+              <Link
+                href="/register"
+                className=" hover:underline text-green-400"
+              >
                 Create account
               </Link>
             </div>

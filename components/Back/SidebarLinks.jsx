@@ -3,7 +3,6 @@ import {
   ArrowDownToLineIcon,
   FolderDown,
   History,
-  Plus,
   Trash2Icon,
   Users,
 } from "lucide-react";
@@ -40,7 +39,7 @@ function SidebarLinks() {
   return (
     <div className="flex gap-4  py-5 items-center justify-center flex-col px-8 ">
       <div className="flex items-center justify-center flex-col">
-        <h2 className="bg-black dark:bg-[#c225b4] dark:text-stone-100 text-stone-100 py-2 px-4 rounded-md">
+        <h2 className="bg-black dark:bg-green-500 dark:text-stone-100 text-stone-100 py-2 px-4 rounded-md">
           DashBoard
         </h2>
       </div>
@@ -52,18 +51,18 @@ function SidebarLinks() {
             return (
               <Link
                 key={i}
-                className="mt-3 gap-5  px-8 rounded text-stone-950 dark:text-stone-100 hover:bg-[#c225b4]  hover:text-slate-50  inline-flex"
+                className="mt-3 gap-5  px-8 rounded text-stone-950 dark:text-stone-100 hover:bg-green-500  hover:text-slate-50  inline-flex"
                 href={item.href}
               >
                 {/* <Users /> */}
-                <Icon className="text-[#c225b4]" />
+                <Icon className="text-green-500" />
                 <span>{item.name}</span>
               </Link>
             );
           })}
         </div>
         <button
-          className="bg-black dark:bg-[#c225b4] dark:text-stone-100 text-stone-100 py-2 w-28 px-4 rounded-md"
+          className="bg-black dark:bg-green-500 dark:text-stone-100 text-stone-100 py-2 w-28 px-4 rounded-md"
           href=""
         >
           <span>Log Out</span>
