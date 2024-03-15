@@ -50,7 +50,7 @@ function DashboardHeader() {
         <div className="flex items-center gap-2">
           <Image
             className="w-9 h-8 rounded-full"
-            src="/image/user.jpg"
+            src="https://res.cloudinary.com/dp0tf8poo/image/upload/v1710507102/logo.._e34vz7.png"
             alt="user Image"
             width={1080}
             height={1080}

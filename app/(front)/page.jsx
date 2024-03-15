@@ -8,7 +8,7 @@ function page() {
       <div className="flex  items-center justify-center flex-col">
         <span className="text-purple-600">
           <Image
-            src="/image/dcsLogo.webp"
+            src="https://res.cloudinary.com/dp0tf8poo/image/upload/v1710507102/logo.._e34vz7.png"
             alt=""
             width={1080}
             height={1080}
