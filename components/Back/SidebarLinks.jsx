@@ -1,9 +1,11 @@
 import React from "react";
 import {
+  Aperture,
   ArrowDownToLineIcon,
   FolderDown,
   History,
   Trash2Icon,
+  User,
   Users,
 } from "lucide-react";
 import Link from "next/link";
@@ -12,28 +14,29 @@ function SidebarLinks() {
   const sidebarLinks = [
     {
       name: "Courses",
-      icon: Users,
-      href: "/users",
+      icon: ArrowDownToLineIcon,
+      href: "/fimport",
     },
     {
       name: "Challenges",
       icon: History,
       href: "/frequent",
     },
+
     {
-      name: "Apps",
-      icon: FolderDown,
+      name: "Projects",
+      icon: Aperture,
       href: "/others",
     },
     {
-      name: "others ",
-      icon: ArrowDownToLineIcon,
-      href: "/fimport",
+      name: "Others",
+      icon: Users,
+      href: "/users",
     },
     {
       name: "Profile",
-      icon: Trash2Icon,
-      href: "/trash",
+      icon: FolderDown,
+      href: "/others",
     },
   ];
   return (
