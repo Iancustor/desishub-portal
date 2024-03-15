@@ -1,6 +1,7 @@
 import { useRouter } from "next/navigation";
 import React from "react";
 import { useForm } from "react-hook-form";
+import toast from "react-hot-toast";
 
 function CourseForm({ updateStep }) {
   const router = useRouter();
@@ -14,6 +15,7 @@ function CourseForm({ updateStep }) {
   function onSubmit(data) {
     reset();
     // console.log(data);
+    toast.success("User Registered Successfully !");
     router.push("/dashboard");
   }
   return (
