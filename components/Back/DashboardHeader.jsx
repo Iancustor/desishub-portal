@@ -17,7 +17,7 @@ function DashboardHeader() {
     <div className="flex items-center justify-evenly dark:bg-gradient-to-t from-indigo-950  to-black bg-indigo-200 py-2 px-16">
       <span className="text-green-600">
         <Image
-          src="/image/dcsLogo.webp"
+          src="https://res.cloudinary.com/dp0tf8poo/image/upload/v1710507102/logo.._e34vz7.png"
           alt=""
           width={1080}
           height={1080}
@@ -50,7 +50,7 @@ function DashboardHeader() {
         <div className="flex items-center gap-2">
           <Image
             className="w-9 h-8 rounded-full"
-            src="https://res.cloudinary.com/dp0tf8poo/image/upload/v1710507102/logo.._e34vz7.png"
+            src="/image/user.jpg"
             alt="user Image"
             width={1080}
             height={1080}
