@@ -11,27 +11,27 @@ import Image from "next/image";
 function SidebarLinks() {
   const sidebarLinks = [
     {
-      name: "Contacts",
+      name: "Courses",
       icon: Users,
       href: "/users",
     },
     {
-      name: "Frequent",
+      name: "Challenges",
       icon: History,
       href: "/frequent",
     },
     {
-      name: "Other ",
+      name: "Apps",
       icon: FolderDown,
       href: "/others",
     },
     {
-      name: "Import",
+      name: "others ",
       icon: ArrowDownToLineIcon,
       href: "/fimport",
     },
     {
-      name: "Trash",
+      name: "Profile",
       icon: Trash2Icon,
       href: "/trash",
     },
@@ -51,11 +51,11 @@ function SidebarLinks() {
             return (
               <Link
                 key={i}
-                className="mt-3 gap-5  px-8 rounded text-stone-950 dark:text-stone-100 hover:bg-green-500  hover:text-slate-50  inline-flex"
+                className="mt-3 gap-5 py-2  px-8 rounded text-stone-950 dark:text-stone-100 hover:bg-green-500  hover:text-slate-50  inline-flex"
                 href={item.href}
               >
                 {/* <Users /> */}
-                <Icon className="text-green-500" />
+                <Icon className="text-green-50 " />
                 <span>{item.name}</span>
               </Link>
             );
